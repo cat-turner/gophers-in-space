@@ -1,14 +1,12 @@
-## Example 1
-
+## Example 1 
 
 Adapted from: https://medium.com/@maumribeiro/my-first-graphql-server-in-go-responding-to-apollo-bd1c11426572
 
-
 ## What's this
 
-A verbose implementation of AstronautSchema, it clearly shows a few Graphql primary concepts:
+An example that shows a few Graphql primary concepts:
 
-### What does a graphql api look like to the client?
+## What does a graphql api look like to the client?
 
 A single endpoint is used for all datasoures.
 
@@ -51,7 +49,7 @@ Types are building blocks that make up graphql Schemas and define:
 
 Schema Definition Language (SDL) is used to express what types are available within a schema and how they related to eachother.
 
-### Types
+## Types
 Instead of endpoints, Graphql uses the Type System to describe what data can be queried and how it can be changed.
 
 GraphQL type system categorizes several custom types, that can be defined by the code including:
@@ -63,13 +61,13 @@ Enums
 Scalars
 InputObjects
 
-### This code
+## This code
 
 AstronautSchema: defines the schema. Has two fields, query (queryType) and mutation (mutationType).
 
 Query is the root type, which means it represents all possible entry points into the api.
 
-### Resolvers: let's talk about them
+## Resolvers: let's talk about them
 
 A resolver is a function.
 
@@ -117,4 +115,4 @@ What have we learned here, from this code?
 - Mutations, which are expected to mutate date
 - Resolvers, functions that define how the data is retrieved and how it is manupulated in the query and mutations, respectively
 
-Next: Same thing, less code.
+Next: Queries and Mutations, in less code.

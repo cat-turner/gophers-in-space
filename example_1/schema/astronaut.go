@@ -38,7 +38,7 @@ func init() {
 
 	// astronautType is a gql query object made up of resolvers, which
 	// return scalar values from the fields: id, name, age
-	// declare a graphql object that will be queried by the FE
+	// declare a graphql object that will be queried by the front end
 	// this defines what fields are exposed in the graphql query
 	astronautType = graphql.NewObject(graphql.ObjectConfig{
 		Name:        "Astronaut",
@@ -141,7 +141,7 @@ func init() {
 	mutationType := graphql.NewObject(graphql.ObjectConfig{
 		Name: "Mutation",
 		Fields: graphql.Fields{
-			"addCrewMember": &graphql.Field{
+			"addAstronaut": &graphql.Field{
 				Type: graphql.NewList(astronautType),
 				// the crewmember is added via argument
 				Args: graphql.FieldConfigArgument{
@@ -182,7 +182,7 @@ func GetAllAstronauts() []Astronaut {
 	return astronauts
 }
 
-// AddAstronaut is called when addCrewMember is requested
+// AddAstronaut is called when addAstronaut is requested
 // append the astronaut to the slice
 func AddAstronaut(a Astronaut) []Astronaut {
 	astronautData[len(astronautData)+1] = a
