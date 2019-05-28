@@ -18,17 +18,18 @@ The apis capabilities are defined in the Schema.
 
 You use queries select fields from an entity.
 
-`query {
+```
+query {
   astronauts {
     name
 
   }
 }
-`
+```
 
 You use mutations to modfiy data.
 
-`
+````
 mutation{
   addCrewMember(input: {
     name: "Billy",
@@ -40,7 +41,7 @@ mutation{
     name
   }
 }
-`
+```
 
 Types are building blocks that make up graphql Schemas and define:
 - what data can be queried
@@ -84,7 +85,8 @@ implementation in graphql-go:
 
 all of this in the code is defined in `graphql.ResolveParams`
 
-`type ResolveParams struct {
+```
+type ResolveParams struct {
     // Source is the source value
     Source interface{}
 
@@ -98,7 +100,8 @@ all of this in the code is defined in `graphql.ResolveParams`
     // It is commonly
     // used to represent an authenticated user, or request-specific caches.
     Context context.Context
-}`
+}
+```
 
 For example: Query: queryType -> astronautType
 
