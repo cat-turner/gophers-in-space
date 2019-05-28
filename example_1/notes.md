@@ -60,8 +60,8 @@ GraphQL type system categorizes several custom types, that can be defined by the
 - InputObjects: Types used to hold input data, especially when a query or mutation hold multiple arugments
 
 Not shown:
-Interfaces: Allow multiple objects to share some fields
-Unions: Can resolve a number of object types
+- Interfaces: Allow multiple objects to share some fields
+- Unions: Can resolve a number of object types
 
 ## This code
 
