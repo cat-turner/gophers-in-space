@@ -54,7 +54,7 @@ Schema Definition Language (SDL) is used to express what types are available wit
 ### Types
 Instead of endpoints, Graphql uses the Type System to describe what data can be queried and how it can be changed.
 
-GraphQL type system categorizes several custom types, that can be defined by programmer, including:
+GraphQL type system categorizes several custom types, that can be defined by the code including:
 
 Objects
 Interfaces
@@ -75,7 +75,7 @@ A resolver is a function.
 
 Each field is backed by a function called a resolver, which produces the next value. If the field produces a scalar value (such as a string or int) then the execution of the query is complete. However if the field contains another object value, then it will call that objects' resolve function, until a scalar value is produced. 
 
-Resolvers have four aguments:
+From the docs - Resolvers have four aguments:
 - obj: the previous object, which for root query field is not used
 - args: arguments provided to the field in the GraphQL query
 - context: holds contextual info such as which user is logged in (not used here)

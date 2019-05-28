@@ -88,9 +88,30 @@ func init() {
 		Name: "Query",
 		Fields: graphql.Fields{
 			"astronauts": &graphql.Field{
-				Type: graphql.NewList(astronautType),
+				Type:        graphql.NewList(astronautType),
+				Description: "List all astronauts or get by ID",
+				Args: graphql.FieldConfigArgument{
+					"id": &graphql.ArgumentConfig{
+						Description: "The id of the desired astronaut.",
+						// note that its an optional argument
+						Type: graphql.Int,
+					},
+				},
 				Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-					return GetAllAstronauts(), nil
+					id, ok := p.Args["id"].(int)
+					astronauts := GetAllAstronauts()
+					if ok {
+						r := []Astronaut{}
+						for _, a := range astronauts {
+							if int(a.Id) == id {
+								r = append(r, a)
+								return r, nil
+							}
+						}
+						// no match
+						return r, nil
+					}
+					return astronauts, nil
 				},
 			},
 		},
@@ -118,7 +139,7 @@ func init() {
 	})
 	// mutationType can also be found at the top level, and is used for read-write operations
 	mutationType := graphql.NewObject(graphql.ObjectConfig{
-		Name: "NotMutation",
+		Name: "Mutation",
 		Fields: graphql.Fields{
 			"addCrewMember": &graphql.Field{
 				Type: graphql.NewList(astronautType),
