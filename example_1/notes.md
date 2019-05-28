@@ -54,12 +54,14 @@ Instead of endpoints, Graphql uses the Type System to describe what data can be 
 
 GraphQL type system categorizes several custom types, that can be defined by the code including:
 
-Objects
-Interfaces
-Unions
-Enums
-Scalars
-InputObjects
+Objects: Define the type name and fields present in that type
+Enums: Define a subset of possible values for that type
+Scalars: Point to actual data, there are 5 types - Int, Float, String, Boolean and  ID
+InputObjects: Types used to hold input data, especially when a query or mutation hold multiple arugments
+
+Not shown:
+Interfaces: Allow multiple objects to share some fields
+Unions: Can resolve a number of object types
 
 ## This code
 
