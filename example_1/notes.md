@@ -29,7 +29,7 @@ query {
 
 You use mutations to modfiy data.
 
-````
+```
 mutation{
   addCrewMember(input: {
     name: "Billy",
@@ -65,7 +65,7 @@ InputObjects
 
 ### This code
 
-AstronautSchema: defines the schema. Has two fields, query (queryType)and mutation (mutationType).
+AstronautSchema: defines the schema. Has two fields, query (queryType) and mutation (mutationType).
 
 Query is the root type, which means it represents all possible entry points into the api.
 
