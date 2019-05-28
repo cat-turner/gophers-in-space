@@ -3,24 +3,19 @@
 
 0. Read example
 
-https://gqlgen.com/getting-started/
+    https://gqlgen.com/getting-started/
 
 1. Define the schema in schema.graphql
 
 2. Run command to create boilerplate code
 
-`go run github.com/99designs/gqlgen init`
+    `go run github.com/99designs/gqlgen init`
 
 3. Implement the resolvers
 
-```
-fill in anything with panic
-```
-
 4. Ran the server
-`go run server/server.go`
+    `go run server/server.go`
 
 
 How it works:
 Libs like gqlgen and graph-gophers/graphql-go use go generate
-`go generate ./...`
