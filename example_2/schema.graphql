@@ -1,0 +1,19 @@
+type Astronaut {
+    id: Int!
+    name: String!
+    age: Int!
+}
+
+type Query {
+    astronauts: [Astronaut!]!
+}
+
+input AstronautInput {
+    id: Int!
+    name: String!
+    age: Int!
+}
+
+type Mutation {
+    addAstronaut(input: AstronautInput!): [Astronaut!]!
+}
